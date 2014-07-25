@@ -343,6 +343,8 @@ class FileBrowserSite(object):
         except (EmptyPage, InvalidPage):
             page = p.page(p.num_pages)
 
+        signals.filebrowser_browsedir.send(sender=request, path=path, site=self)
+
         return render_to_response('filebrowser/index.html', {
             'p': p,
             'page': page,
