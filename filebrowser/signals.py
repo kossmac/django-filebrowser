@@ -3,6 +3,11 @@
 # DJANGO IMPORTS
 from django.dispatch import Signal
 
+# browsedir signal
+# path: Which path is browsed
+# site: Current FileBrowserSite instance
+filebrowser_browsedir = Signal(providing_args=["path", "site"])
+
 # upload signals
 # path: Absolute server path to the file/folder
 # name: Name of the file/folder
